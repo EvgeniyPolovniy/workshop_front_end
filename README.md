@@ -1,6 +1,6 @@
 ####Table of Contents
 **[Emmet](#emmet)**  
-**[SCSS](#scss)** 
+**[SCSS](#scss-sass)** 
 
 ##Emmet
 [Emmet official site](http://docs.emmet.io/)
@@ -40,4 +40,50 @@
 	<li class="item">Quasi sequi maxime accusamus nesciunt!</li>
 </ul>
 ```
-## SCSS
+## SCSS (SASS)
+[SASS official site](http://sass-lang.com//)
+### Вложенность
+SCSS
+```scss
+#some {
+  border: 1px solid red;
+  .some { background: white; }
+}
+```
+CSS
+```css
+#some {
+  border: 1px solid red;
+}
+#some .some {
+  background: white;
+}
+```
+### Переменные и операции с ними
+SCSS
+```scss
+$blue: #3bbfce;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $blue;
+  color: darken($blue, 9%);
+}
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $blue;
+}
+```
+CSS
+```css
+.content-navigation {
+  border-color: #3bbfce;
+  color: #2ca2af;
+}
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce;
+}
+```
