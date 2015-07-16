@@ -296,6 +296,7 @@ var gulp = require('gulp');
 
 gulp.task('scss:default', ['scss:merge', 'scss:concat', 'scss:compile', 'scss:cleanup']);
 ```
+одна из задачь - сборка scss
 ./ichannel-base/gulp/tasks/scss-compile.js
 ```js
 var gulp = require('gulp');
