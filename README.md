@@ -64,6 +64,7 @@ SCSS
 ```scss
 $blue: #3bbfce;
 $margin: 16px;
+$url: url(../img/icons/ui-ios-sprite.png);
 
 .content-navigation {
   border-color: $blue;
@@ -73,6 +74,9 @@ $margin: 16px;
   padding: $margin / 2;
   margin: $margin / 2;
   border-color: $blue;
+}
+.wrapper {
+  background: $url;
 }
 ```
 CSS
@@ -85,5 +89,83 @@ CSS
   padding: 8px;
   margin: 8px;
   border-color: #3bbfce;
+}
+.wrapper {
+  background: url(../img/icons/ui-ios-sprite.png);
+}
+```
+### Подключение других scss файлов
+SCSS
+```scss
+@import "./core/variables";
+@import "./core/mixin";
+@import "./core-project/variables";
+```
+
+### Миксинны
+SCSS
+```scss
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin transition( $transition-property, $transition-time, $transition-method ) {
+  -webkit-transition: $transition-property $transition-time $transition-method;
+  -moz-transition: $transition-property $transition-time $transition-method;
+  -ms-transition: $transition-property $transition-time $transition-method;
+  -o-transition: $transition-property $transition-time $transition-method;
+  transition: $transition-property $transition-time $transition-method;
+}
+
+.block-wrap {
+  .block {
+    @include text-truncate;
+  }
+  @include transition(all, .2ms, ease);
+}
+```
+CSS
+```css
+.block-wrap {
+  -webkit-transition: all 0.2ms ease;
+  -moz-transition: all 0.2ms ease;
+  -ms-transition: all 0.2ms ease;
+  -o-transition: all 0.2ms ease;
+  transition: all 0.2ms ease;
+}
+.block-wrap .block {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+```
+### Наследование
+SCSS
+```scss
+%extend_1 {
+  display: inline-block;
+}
+%extend_2 {
+  @extend %extend_1;
+  width: 34px;
+  height: 19px;
+}
+.wrap {
+  @extend %extend_1;
+  .block {
+    @extend %extend_2;
+  }
+}
+```
+CSS
+```css
+.wrap,
+.wrap .block {
+  display: inline-block;
+}
+.wrap .block {
+  width: 34px;
+  height: 19px;
 }
 ```
