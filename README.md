@@ -6,7 +6,9 @@
 
 **[GULP](#gulp)**
 
-##Emmet
+**[CSS](#css)**
+
+#Emmet
 [Emmet official site](http://docs.emmet.io/)
 
 #### !
@@ -44,7 +46,7 @@
 	<li class="item">Quasi sequi maxime accusamus nesciunt!</li>
 </ul>
 ```
-## SCSS (SASS)
+# SCSS (SASS)
 [SASS official site](http://sass-lang.com//)
 ### Вложенность
 SCSS
@@ -173,7 +175,7 @@ CSS
   height: 19px;
 }
 ```
-##Gulp
+#Gulp
 [Gulp official site](http://gulpjs.com/)
 
 package.json
@@ -357,4 +359,25 @@ E:\OpenServer\domains\jen.a2a.co>gulp
 [17:20:37] Finished 'default' after 5.92 µs
 
 E:\OpenServer\domains\jen.a2a.co>
+```
+# CSS
+Основные правила чистаты кода
+```css
+/* Плохой CSS */
+.selector, .selector-secondary, .selector[type=text] {
+  padding:15px;
+  margin:0px 0px 15px;
+  background-color:rgba(0, 0, 0, 0.5);
+  box-shadow:0 1px 2px #CCC,inset 0 1px 0 #FFFFFF
+}
+
+/* Хороший CSS */
+.selector,
+.selector-secondary,
+.selector[type="text"] {
+  padding: 15px;
+  margin: 0 0 15px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+}
 ```
