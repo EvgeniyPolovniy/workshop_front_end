@@ -1,16 +1,11 @@
 ####Table of Contents
 
-**[Emmet](#emmet)**
-
-**[SCSS](#scss-sass)**
-
-**[GULP](#gulp)**
-
-**[CSS](#css)**
-
-**[HTML](#html)**
-
-**[Links](#links)**
+- **[Emmet](#emmet)**
+- **[SCSS](#scss-sass)**
+- **[GULP](#gulp)**
+- **[CSS](#css)**
+- **[HTML](#html)**
+- **[Links](#links)**
 
 #Emmet
 [Emmet official site](http://docs.emmet.io/)
