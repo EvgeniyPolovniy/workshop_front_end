@@ -360,7 +360,7 @@ E:\OpenServer\domains\jen.a2a.co>gulp
 E:\OpenServer\domains\jen.a2a.co>
 ```
 # CSS
-Основные правила чистаты кода
+Основные правила чистоты кода
 ```css
 /* Плохой CSS */
 .selector, .selector-secondary, .selector[type=text] {
