@@ -8,6 +8,10 @@
 
 **[CSS](#css)**
 
+**[HTML](#html)**
+
+**[Links](#links)**
+
 #Emmet
 [Emmet official site](http://docs.emmet.io/)
 
@@ -404,3 +408,62 @@ ul li { }
     opacity: 0.9;
 }
 ```
+Стили для тегов это плохо
+```css
+/* Плохой CSS */
+body ul li {
+    line-height: 20px;
+}
+/* Хороший CSS */
+.item {
+    line-height: 20px;
+}
+```
+
+# HTML
+Именование классов
+Исключение методология БЭМ
+```css
+/* Плохо */
+.pageHead {}
+.sub_content {}
+.tmp_block-footerWrap {}
+
+/* Хорошо */
+.page-head {}
+.sub-content {}
+```
+Для JS пишите отдельные классы и не вешайте на них стили из css
+```css
+.js-item
+.action-save
+```
+Именование файлов
+```css
+/* Плохо */
+ios-icon.png
+ios-icon2x.png
+mainSprite.png
+
+/* Хорошо */
+ios_icons.png
+ios_icons@2x.png
+main_sprite_app.png
+```
+#### Оптимизация картинок
+1. PNG только для картинок с прозрачностью.
+2. png-24 не всегда оплавданно, png-8 значительно легче
+3. При нарезке в PS сохранять только в web формате (ctrl+shift+alt+s) и в 100% качества
+4. Все картинки сохранять с кодировкой progressive
+5. Использовать сервисы оптимизации изображений перед релизом.
+
+# Links
+Несколько сервисов по оптимизации:
+PNG - https://tinypng.com/
+JPG - http://www.jpegmini.com/main/shrink_photo?test_cookie=1
+
+Имена для переменных с цветом:
+http://chir.ag/projects/name-that-color/
+
+Картинку в base64
+http://www.base64-image.de/
