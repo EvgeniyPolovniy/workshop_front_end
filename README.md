@@ -381,3 +381,26 @@ E:\OpenServer\domains\jen.a2a.co>
   box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
 ```
+Используйте class
+```css
+/* Плохой CSS */
+ul li { }
+#element { }
+
+/* Хороший CSS */
+.list-item { }
+.element { }
+```
+Очень важный код :)
+```css
+/* Плохой CSS */
+.dropdown {
+    padding: 10px !important;
+    opacity: 0.9 !important;
+}
+/* Хороший CSS */
+.dropdown_cute {
+    padding: 10px;
+    opacity: 0.9;
+}
+```
