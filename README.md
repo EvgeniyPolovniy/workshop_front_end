@@ -10,6 +10,8 @@
 #Emmet
 [Emmet official site](http://docs.emmet.io/)
 
+Emmet (предыдущее название — Zen Coding) — это набор плагинов для различных популярных текстовых редакторов, используемых для скоростного написания HTML и CSS кода.
+
 #### ! => TAB
 
 ![](docs/emmet1.gif)
