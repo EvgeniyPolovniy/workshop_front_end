@@ -8,7 +8,7 @@
 - **[Links](#links)**
 
 #Emmet
-[Emmet official site](http://docs.emmet.io/)
+[Emmet](http://docs.emmet.io) (предыдущее название — Zen Coding) — это набор плагинов для различных популярных текстовых редакторов, используемых для скоростного написания HTML и CSS кода.
 
 #### ! => TAB
 
@@ -55,7 +55,8 @@
 </ul>
 ```
 # SCSS (SASS)
-[SASS official site](http://sass-lang.com//)
+Sass (Syntactically Awesome Stylesheets) — модуль, включенный в Haml. [SASS](http://sass-lang.com) — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.
+
 ### Вложенность
 SCSS
 ```scss
@@ -117,6 +118,7 @@ SCSS
 ```
 
 ### Миксинны
+Переменные в миксинах поддерживают default значания.
 SCSS
 ```scss
 @mixin text-truncate {
@@ -124,7 +126,7 @@ SCSS
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-@mixin transition( $transition-property, $transition-time, $transition-method ) {
+@mixin transition( $transition-property, $transition-time, $transition-method:  ease) {
   -webkit-transition: $transition-property $transition-time $transition-method;
   -moz-transition: $transition-property $transition-time $transition-method;
   -ms-transition: $transition-property $transition-time $transition-method;
@@ -136,7 +138,7 @@ SCSS
   .block {
     @include text-truncate;
   }
-  @include transition(all, .2ms, ease);
+  @include transition(all, .2ms);
 }
 ```
 CSS
@@ -184,7 +186,7 @@ CSS
 }
 ```
 #Gulp
-[Gulp official site](http://gulpjs.com/)
+[Gulp](http://gulpjs.com) — это инструмент сборки веб-приложения, позволяющий автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д
 
 package.json
 ```json
