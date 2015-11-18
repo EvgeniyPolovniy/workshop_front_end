@@ -188,7 +188,10 @@ CSS
 #Gulp
 [Gulp](http://gulpjs.com) — это инструмент сборки веб-приложения, позволяющий автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д
 
-package.json
+projectBasePath/package.json
+
+![](docs/gulp1.png)
+
 ```json
 {
   "name": "tishman",
@@ -215,17 +218,20 @@ package.json
   }
 }
 ```
-./gulpfile.js
+
+projectBasePath/gulpfile.js
 ```js
 require('./ichannel-base/gulpfile.js'); 
 ```
-./ichannel-base/gulpfile.js
+
+projectBasePath/ichannel-base/gulpfile.js
 ```js
 var requireDir = require('require-dir');
 // Require all tasks in gulp/tasks, including sub folders
 requireDir('./gulp/tasks', { recurse: true });
 ```
-./ichannel-base/gulp/config.js
+
+projectBasePath/ichannel-base/gulp/config.js
 ```js
 module.exports = {
     files: {
@@ -285,12 +291,15 @@ module.exports = {
     }
 };
 ```
+
 #### Путь одной таски
-запуск сборщика
+Запуск сборщика
+
 ```
 E:\OpenServer\domains\jen.a2a.co>gulp
 ```
-./ichannel-base/gulp/tasks/dafault.js
+
+projectBasePath/ichannel-base/gulp/tasks/dafault.js
 ```js
 var gulp = require('gulp');
 
@@ -302,14 +311,16 @@ gulp.task('default', [
     'fonts:default'
 ]);
 ```
-./ichannel-base/gulp/tasks/sscss:default.js
+
+projectBasePath/ichannel-base/gulp/tasks/sscss:default.js
 ```js
 var gulp = require('gulp');
 
 gulp.task('scss:default', ['scss:merge', 'scss:concat', 'scss:compile', 'scss:cleanup']);
 ```
-одна из задачь - сборка scss
-./ichannel-base/gulp/tasks/scss-compile.js
+
+Одна из задачь - сборка scss
+projectBasePath/ichannel-base/gulp/tasks/scss-compile.js
 ```js
 var gulp = require('gulp');
 var sass = require('gulp-sass');
@@ -327,49 +338,11 @@ gulp.task('scss:compile', ['scss:merge'], function (cb) {
     });
 });
 ```
-Выполнение сборки проекта
-```
-E:\OpenServer\domains\jen.a2a.co>gulp
-[17:20:36] Using gulpfile E:\OpenServer\domains\jen.a2a.co\gulpfile.js
-[17:20:36] Starting 'js:merge'...
-[17:20:36] Starting 'scss:merge'...
-[17:20:36] Starting 'img:merge'...
-[17:20:36] Starting 'views:merge'...
-[17:20:36] Starting 'fonts:concat'...
-[17:20:36] Finished 'fonts:concat' after 25 ms
-[17:20:36] Starting 'fonts:default'...
-[17:20:36] Finished 'fonts:default' after 13 µs
-[17:20:36] Finished 'scss:merge' after 420 ms
-[17:20:36] Starting 'scss:compile'...
-[17:20:36] Finished 'img:merge' after 559 ms
-[17:20:36] Starting 'img:default'...
-[17:20:36] Finished 'img:default' after 5.53 µs
-[17:20:36] Finished 'scss:compile' after 301 ms
-[17:20:36] Starting 'scss:concat'...
-[17:20:36] Finished 'scss:concat' after 44 ms
-[17:20:36] Starting 'scss:cleanup'...
-[17:20:36] Finished 'scss:cleanup' after 1.17 ms
-[17:20:36] Starting 'scss:default'...
-[17:20:36] Finished 'scss:default' after 5.13 µs
-[17:20:37] Finished 'views:merge' after 949 ms
-[17:20:37] Starting 'views:concat'...
-[17:20:37] Finished 'js:merge' after 1.11 s
-[17:20:37] Starting 'js:concat'...
-[17:20:37] Finished 'views:concat' after 370 ms
-[17:20:37] Starting 'views:cleanup'...
-[17:20:37] Finished 'views:cleanup' after 185 µs
-[17:20:37] Starting 'views:default'...
-[17:20:37] Finished 'views:default' after 6.71 µs
-[17:20:37] Finished 'js:concat' after 274 ms
-[17:20:37] Starting 'js:cleanup'...
-[17:20:37] Finished 'js:cleanup' after 150 µs
-[17:20:37] Starting 'js:default'...
-[17:20:37] Finished 'js:default' after 6.32 µs
-[17:20:37] Starting 'default'...
-[17:20:37] Finished 'default' after 5.92 µs
 
-E:\OpenServer\domains\jen.a2a.co>
-```
+Выполнение сборки проекта
+
+![](docs/gulp.gif)
+
 # CSS
 Основные правила чистоты кода
 ```css
