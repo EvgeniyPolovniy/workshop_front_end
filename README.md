@@ -10,7 +10,10 @@
 #Emmet
 [Emmet official site](http://docs.emmet.io/)
 
-#### !
+#### ! => TAB
+
+![](docs/emmet1.gif)
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +27,10 @@
 </html>
 ```
 
-#### div+div>p>span+em^bq
+#### div+div>p>span+em^bq => TAB
+
+![](docs/emmet2.gif)
+
 ```html
 <div></div>
 <div>
@@ -36,7 +42,10 @@
 </div>
 ```
 
-#### ul.generic-list>lorem5.item*4
+#### ul.generic-list>lorem5.item*4 => TAB
+
+![](docs/emmet3.gif)
+
 ```html
 <ul class="generic-list">
 	<li class="item">Lorem ipsum dolor sit amet.</li>
