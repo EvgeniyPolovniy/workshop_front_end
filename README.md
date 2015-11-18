@@ -118,6 +118,7 @@ SCSS
 ```
 
 ### Миксинны
+Переменные в миксинах поддерживают default значания.
 SCSS
 ```scss
 @mixin text-truncate {
@@ -125,7 +126,7 @@ SCSS
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-@mixin transition( $transition-property, $transition-time, $transition-method ) {
+@mixin transition( $transition-property, $transition-time, $transition-method:  ease) {
   -webkit-transition: $transition-property $transition-time $transition-method;
   -moz-transition: $transition-property $transition-time $transition-method;
   -ms-transition: $transition-property $transition-time $transition-method;
@@ -137,7 +138,7 @@ SCSS
   .block {
     @include text-truncate;
   }
-  @include transition(all, .2ms, ease);
+  @include transition(all, .2ms);
 }
 ```
 CSS
