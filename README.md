@@ -54,9 +54,18 @@
 	<li class="item">Quasi sequi maxime accusamus nesciunt!</li>
 </ul>
 ```
-# SCSS (SASS)
-Sass (Syntactically Awesome Stylesheets) — модуль, включенный в Haml. [SASS](http://sass-lang.com) — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.
+# Pre- and Post- processors
 
+### Pre-processors
+[SASS](http://sass-lang.com) (Syntactically Awesome Stylesheets) — модуль, включенный в Haml. Sass — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.
+
+[LESS](http://lesscss.org) — это динамический язык стилей, который разработал Alexis Sellier. Он создан под влиянием языка стилей Sass, и, в свою очередь, оказал влияние на его новый синтаксис «SCSS», в котором также использован синтаксис, являющийся расширением СSS
+[SASS vs LESS (Habrahabr post)](http://habrahabr.ru/post/144309)
+
+### Post-processor
+[PostCss](https://github.com/postcss/postcss) - это инструмент, для изменения Css с помощью JavaScript. Это нечто большее чем простой пост-процессор, но и немного не то, чем являются препроцессоры.
+
+##SCSS (синтаксис SASS)
 ### Вложенность
 SCSS
 ```scss
