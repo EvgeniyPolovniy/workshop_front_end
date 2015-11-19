@@ -200,6 +200,7 @@ CSS
 
 #Responsive CSS Framework
 **[Table of Contents](#table-of-contents)**
+
 [Bootstrap](http://getbootstrap.com) — подходит для быстрого прототепирования веб интерфейсов, чему способствует множество готовых элементов, таких как кнопки, поля, воодов, менюшки и т.п
 
 [Zurb Foundation](http://foundation.zurb.com) - меньше шаблонных элементов, но больше заточен на кросплатформенные и адаптивные сайты.
@@ -210,6 +211,7 @@ CSS
 
 #Project Builders
 **[Table of Contents](#table-of-contents)**
+
 [Gulp](http://gulpjs.com), [Grunt](http://gruntjs.com/) — это инструменты сборки веб-приложения, позволяющиe автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д
 
 [Webpack](http://webpack.github.io) — это утилита для сборки бандлов и оптимизации модулей JavaScript и других ресурсов для фронтенда.
@@ -376,6 +378,7 @@ gulp.task('scss:compile', ['scss:merge'], function (cb) {
 
 # CSS
 **[Table of Contents](#table-of-contents)**
+
 Основные правила чистоты кода
 ```css
 /* Плохой CSS */
@@ -433,6 +436,7 @@ body ul li {
 
 # HTML
 **[Table of Contents](#table-of-contents)**
+
 Именование классов.
 Исключение методология БЭМ
 ```css
@@ -471,6 +475,7 @@ main_sprite_app.png
 
 # Links
 **[Table of Contents](#table-of-contents)**
+
 Несколько сервисов по оптимизации:
 - PNG - https://tinypng.com/
 - JPG - http://www.jpegmini.com/main/shrink_photo?test_cookie=1
