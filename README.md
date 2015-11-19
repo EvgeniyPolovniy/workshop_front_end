@@ -2,6 +2,7 @@
 
 - **[Emmet](#emmet)**
 - **[Pre- and Post- processors](#pre--and-post--processors)**
+- **[Responsive CSS Framework](#responsive-css-framework)**
 - **[Project Builders](#project-builders)**
 - **[CSS](#css)**
 - **[HTML](#html)**
@@ -195,8 +196,20 @@ CSS
   height: 19px;
 }
 ```
+
+#Responsive CSS Framework
+[Bootstrap](http://getbootstrap.com) — подходит для быстрого прототепирования. Лчень много готовых элементов.
+
+[Zurb Foundation](http://foundation.zurb.com) - меньше шаблонных элементов, но больше заточен на кросплатформенные и адаптивные сайты.
+
+Адаптивные сетки у обоих фреймворков достаточно хороши, но у Зурба более осмысленно названы классы.
+
+Расширенное сравнение фреймворокв можно посмотреть на [responsive.vermilion.com](http://responsive.vermilion.com/compare.php)
+
+Использование какой-либо адаптивной сетки сильно упрощает жизнь при разработке адаптивных сайтов и приложений.
+
 #Project Builders
-[Gulp](http://gulpjs.com), [Grunt](http://gruntjs.com/),  — это инструменты сборки веб-приложения, позволяющиe автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д
+[Gulp](http://gulpjs.com), [Grunt](http://gruntjs.com/) — это инструменты сборки веб-приложения, позволяющиe автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д
 
 [Webpack](http://webpack.github.io) — это утилита для сборки бандлов и оптимизации модулей JavaScript и других ресурсов для фронтенда.
 
