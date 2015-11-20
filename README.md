@@ -1,8 +1,10 @@
-####Table of Contents
+#Table of Contents
 
 - **[Emmet](#emmet)**
-- **[SCSS](#scss-sass)**
-- **[GULP](#gulp)**
+- **[Pre- and Post- processors](#pre--and-post--processors)**
+- **[Responsive CSS Framework](#responsive-css-framework)**
+- **[CSS float Property](#css-float-property)**
+- **[Project Builders](#project-builders)**
 - **[CSS](#css)**
 - **[HTML](#html)**
 - **[Links](#links)**
@@ -54,9 +56,20 @@
 	<li class="item">Quasi sequi maxime accusamus nesciunt!</li>
 </ul>
 ```
-# SCSS (SASS)
-Sass (Syntactically Awesome Stylesheets) — модуль, включенный в Haml. [SASS](http://sass-lang.com) — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.
+# Pre- and Post- processors
+**[Table of Contents](#table-of-contents)**
 
+### Pre-processors
+[SASS](http://sass-lang.com) (Syntactically Awesome Stylesheets) — модуль, включенный в Haml. Sass — это метаязык на основе CSS, предназначенный для увеличения уровня абстракции CSS кода и упрощения файлов каскадных таблиц стилей.
+
+[LESS](http://lesscss.org) — это динамический язык стилей, который разработал Alexis Sellier. Он создан под влиянием языка стилей Sass, и, в свою очередь, оказал влияние на его новый синтаксис «SCSS», в котором также использован синтаксис, являющийся расширением СSS.
+
+[SASS vs LESS (Habrahabr post)](http://habrahabr.ru/post/144309)
+
+### Post-processor
+[PostCss](https://github.com/postcss/postcss) - это инструмент, для изменения Css с помощью JavaScript. Это нечто большее чем простой пост-процессор, но и немного не то, чем являются препроцессоры.
+
+##SCSS (синтаксис SASS)
 ### Вложенность
 SCSS
 ```scss
@@ -185,9 +198,89 @@ CSS
   height: 19px;
 }
 ```
-#Gulp
-[Gulp](http://gulpjs.com) — это инструмент сборки веб-приложения, позволяющий автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д
 
+#Responsive CSS Framework
+**[Table of Contents](#table-of-contents)**
+
+[Bootstrap](http://getbootstrap.com) — подходит для быстрого прототепирования веб интерфейсов, чему способствует множество готовых элементов, таких как кнопки, поля, воодов, менюшки и т.п
+
+[Zurb Foundation](http://foundation.zurb.com) - меньше шаблонных элементов, но больше заточен на кросплатформенные и адаптивные сайты.
+
+Использование какой-либо адаптивной сетки сильно упрощает жизнь при разработке адаптивных сайтов и приложений.
+Адаптивные сетки у обоих фреймворков достаточно хороши, но у Зурба более осмысленно названы классы.
+Расширенное сравнение фреймвороков можно посмотреть на [responsive.vermilion.com](http://responsive.vermilion.com/compare.php)
+
+###Принципы работы сеток на примере Zurb Foundation
+
+Zurb Foundation is mobile-first - фраза с их сайта. Это означает, что, с точки зрения кода, разрабатывается сначала мобильная версия, и после этого добавляются стили для более широких устройств. 
+
+Desktop-first - это обратный подход, код пишется сразу под большие расширения, и при уменьшении экрана свойства переопределяются.
+
+```html
+<div class="row">
+  <div class="small-12 medium-6 large-3 column">...</div>
+  <div class="small-12 medium-6 large-3 column">...</div>
+  <div class="small-12 medium-6 large-3 column">...</div>
+  <div class="small-12 medium-6 large-3 column">...</div>
+</div>
+```
+
+CSS сетки принято делать 12-ти колоночными. 
+
+У блока обертки, в данном случае .row, применены стили clearfix.
+
+У .column - float:left; что позволяет выстроить их в линию.
+
+А классы .small-12 .medium-6 .large-3 отвечают за ширину блоков на определенном разрешении.
+
+Определение где граница между small, medium и large находятся в SASS переменных в самом Zurb. При желании их можно переопределить.
+
+```css
+.small-12 {width: 100%}
+.medium-6 {width: 50%}
+.large-3 {width: 25%}
+```
+
+Число после названия класса говорит о том, сколько колонок из 12 по ширине должен занять этот блок.
+Весь css, который нужен для корректной работы и есть фреймворк, вам остается только правильно использовать классы.
+
+#CSS float Property
+**[Table of Contents](#table-of-contents)**
+
+```css
+float: left | right | none | inherit;
+```
+
+- При позиционировании элементы вынимаются из потока и сдвигается влево/вправо до того как коснётся либо границы родителя, либо другого элемента с float.
+- Если пространства по горизонтали не хватает для того, чтобы вместить элемент, то он сдвигается вниз до тех пор, пока не начнёт помещаться.
+- Все элементы в потоке, кроме других float и inline-элементов, ничего не знают о позиционировании и физических размерах float элемента
+- При присваивании элементу float он автоматически получает display:block. Что означает, что все float элементы могут принимать свойства ширины и высоты. Исключением являются элементы display:inline-table, они не становятся display:block.
+- Если есть картинка с display:float и текст возле нее, то текст ее обтекает. Все бы хорошо, мы получили, что и хотели, но тут есть пакость, картинку обтекает Текст внутри элемента, а не сам элемент.
+
+Направление float потока
+
+![](docs/float1.png)
+
+```css
+clear: none | left | right | both | inherit;
+```
+
+
+
+
+
+#Project Builders
+**[Table of Contents](#table-of-contents)**
+
+[Gulp](http://gulpjs.com), [Grunt](http://gruntjs.com/) — это инструменты сборки веб-приложения, позволяющиe автоматизировать повторяющиеся задачи, такие как сборка и минификация CSS- и JS-файлов, запуск тестов, перезагрузка браузера и т.д
+
+[Webpack](http://webpack.github.io) — это утилита для сборки бандлов и оптимизации модулей JavaScript и других ресурсов для фронтенда.
+
+Основное отличие Gulp/Grunt от Webpack в том, что первые построенны на логике выполнения задачь, а webpack создает "модули", которыми и оперирует.
+
+Дальше рассмотрим подробнее Gulp на примере одного из наших проектов.
+
+##Gulp
 projectBasePath/package.json
 
 ![](docs/gulp1.png)
@@ -344,6 +437,8 @@ gulp.task('scss:compile', ['scss:merge'], function (cb) {
 ![](docs/gulp.gif)
 
 # CSS
+**[Table of Contents](#table-of-contents)**
+
 Основные правила чистоты кода
 ```css
 /* Плохой CSS */
@@ -400,6 +495,8 @@ body ul li {
 ```
 
 # HTML
+**[Table of Contents](#table-of-contents)**
+
 Именование классов.
 Исключение методология БЭМ
 ```css
@@ -437,6 +534,8 @@ main_sprite_app.png
 5. Использовать сервисы оптимизации изображений перед релизом.
 
 # Links
+**[Table of Contents](#table-of-contents)**
+
 Несколько сервисов по оптимизации:
 - PNG - https://tinypng.com/
 - JPG - http://www.jpegmini.com/main/shrink_photo?test_cookie=1
