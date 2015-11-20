@@ -387,7 +387,7 @@ C помощью свойства @media можно указать для как
 
 Пример такого свойства:
 ```css
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2) {
 	/* STYLES GO HERE */
 }
 ```
