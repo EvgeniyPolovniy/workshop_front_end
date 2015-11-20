@@ -3,7 +3,8 @@
 - **[Emmet](#emmet)**
 - **[Pre- and Post- processors](#pre--and-post--processors)**
 - **[Responsive CSS Framework](#responsive-css-framework)**
-- **[CSS float Property](#css-float-property)**
+- **[CSS float property](#css-float-property)**
+- **[CSS position property](#css-position-property)**
 - **[Project Builders](#project-builders)**
 - **[CSS](#css)**
 - **[HTML](#html)**
@@ -244,7 +245,7 @@ CSS сетки принято делать 12-ти колоночными.
 Число после названия класса говорит о том, сколько колонок из 12 по ширине должен занять этот блок.
 Весь css, который нужен для корректной работы и есть фреймворк, вам остается только правильно использовать классы.
 
-#CSS float Property
+#CSS float property
 **[Table of Contents](#table-of-contents)**
 
 ```css
@@ -265,9 +266,33 @@ float: left | right | none | inherit;
 clear: none | left | right | both | inherit;
 ```
 
+Применение этого свойства сдвигает элемент вниз до тех пор, пока не закончатся float элементы слева/справа/с обеих сторон.
+
+Добавляя это свойство мы, конечно же, сможем сдвинуть float элементы, так как мы задумали, но появляется проблема, clear сдвигает элемент в потоке ровно на стролько, сколько нужно для того, что бы следующий элемент находился под предыдущим. При этом сдвиге не учитывается margin сдвигаемого блока.
 
 
+Данная проблема решается добавлением элемента в DOM между испытуемыми:
 
+```html
+<div style="clear:both"></div>
+```
+
+Но, как вы понимаете, наличия пустых и не функциональных элементов в DOM это совсем не хорошо.
+
+Есть более красивое решение - отдельный класс для элементов, которым нужен clear, который бы добавил в DOM превдоелемент:
+
+```css
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+```
+
+#CSS position property
+**[Table of Contents](#table-of-contents)**
 
 #Project Builders
 **[Table of Contents](#table-of-contents)**
