@@ -6,6 +6,7 @@
 - **[CSS float property](#css-float-property)**
 - **[CSS position property](#css-position-property)**
 - **[Adaptive design and layout](#adaptive-design-and-layout)**
+- **[Flexbox property](#flexbox-property)**
 - **[Project Builders](#project-builders)**
 - **[CSS](#css)**
 - **[HTML](#html)**
@@ -391,6 +392,26 @@ C помощью свойства @media можно указать для как
 	/* STYLES GO HERE */
 }
 ```
+
+#Flexbox property
+**[Table of Contents](#table-of-contents)**
+
+Т.к. flexbox — это целый модуль, а не просто единичное свойство, он объединяет в себе множество свойств. Некоторые из них должны применяться к контейнеру (родительскому элементу, так называемому flex-контейнеру), в то время как другие свойства применяются к дочерним элементам, или flex-элементам.
+
+Если обычный лейаут основывается на направлениях потоков блочных и инлайн-элементов, то flex-лейаут основывается на «направлениях flex-потока»
+
+![](docs/flexbox.png)
+
+В основном элементы будут распределяться либо вдоль главной оси (от main-start до main-end), либо вдоль поперечной оси (от cross-start до cross-end).
+
+- main-axis - главная ось, вдоль которой располагаются flex-элементы. Oна необязательно должна быть горизонтальной, всё зависит от свойства justify-content
+- main-start | main-end - flex-элементы размещаются в контейнере от позиции main-start до позиции main-end.
+- main size - ширина или высота flex-элемента в зависимости от выбранной основной величины. Основная величина может быть либо шириной, либо высотой элемента.
+- cross axis - поперечная ось, перпендикулярная к главной. Её направление зависит о тнаправления главной оси.
+- cross-start | cross-end - flex-строки заполняются элементами и размещаются в контейнере от позиции cross-start и до позиции cross-end.
+- cross size - ширина или высота flex-элемента в зависимости от выбранной размерности равняется этой величине. Это свойство совпадает с width или  height элемента в зависимости от выбранной размерности.
+ 
+Подробнее о всех свойствах Flexbox можно посмотреть на [frontender.info](http://frontender.info/a-guide-to-flexbox/)
 
 #Project Builders
 **[Table of Contents](#table-of-contents)**
